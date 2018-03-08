@@ -1,0 +1,15 @@
+$font-family: 'Montserrat', sans-serif !default;
+
+$primary-color: #002C71 !default;
+$secondary-color: #FFA640 !default;
+$text-color: #444 !default;
+$text-color-muted: #8298B9 !default;
+
+$palette-lightgray: #f3f3f3 !default;
+$palette-gray: #d5dae3 !default;
+
+@mixin desktop {
+	@media (min-width: 40em) {
+		@content;
+	}
+}

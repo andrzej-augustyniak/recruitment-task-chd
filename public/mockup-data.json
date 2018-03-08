@@ -1,0 +1,153 @@
+{
+  "user": {
+    "id": 14,
+    "credentials": "Harvey Spencer",
+    "address": {
+      "city": "New York",
+      "country": "USA"
+    },
+    "avatarPath": "public/avatars/nXdgq0Kv.png",
+    "likesCount": 121,
+    "followingCount": 723,
+    "followersCount": 4433
+  },
+  "isLiked": false,
+  "isFollowed": false,
+  "comments": [
+    {
+      "user": {
+        "id": 53,
+        "credentials": "Johns Compton",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-03-05T07:53:52.181Z",
+      "content": "Excepteur elit velit ea amet incididunt velit fugiat ex. Laboris veniam veniam nulla sunt do labore et ea ullamco sunt adipisicing amet."
+    },
+    {
+      "user": {
+        "id": 70,
+        "credentials": "Fischer Jensen",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-02-09T10:38:18.016Z",
+      "content": "Ullamco exercitation pariatur qui aliqua adipisicing aliqua deserunt. Incididunt deserunt cillum ut ullamco mollit irure amet cillum id in."
+    },
+    {
+      "user": {
+        "id": 7,
+        "credentials": "Madeleine Morrison",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-02-22T00:54:08.827Z",
+      "content": "Sit officia anim nisi occaecat est mollit consequat nulla ut labore. Ad culpa voluptate non voluptate qui magna labore aliqua id deserunt ea ut amet dolor."
+    },
+    {
+      "user": {
+        "id": 42,
+        "credentials": "Shaw Mcclain",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-02-06T04:39:03.575Z",
+      "content": "Eiusmod reprehenderit cillum ea eiusmod proident amet ex tempor reprehenderit esse eu. Ipsum in veniam Lorem incididunt elit."
+    },
+    {
+      "user": {
+        "id": 1,
+        "credentials": "Vincent Hester",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-03-07T06:08:13.157Z",
+      "content": "Velit officia ad duis enim ut Lorem ea fugiat qui nostrud fugiat nostrud. Elit in non ea Lorem et anim magna enim duis fugiat."
+    },
+    {
+      "user": {
+        "id": 20,
+        "credentials": "Mooney Clark",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-03-01T06:48:43.770Z",
+      "content": "Incididunt incididunt deserunt aliqua non consectetur. Eu in adipisicing culpa in sint ipsum dolore esse dolor pariatur consectetur anim quis."
+    },
+    {
+      "user": {
+        "id": 31,
+        "credentials": "Lee Townsend",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-02-09T05:12:32.474Z",
+      "content": "Do ullamco elit aute ipsum adipisicing reprehenderit nostrud ex veniam commodo culpa eu officia. Qui nostrud id consequat ea ea deserunt in ullamco."
+    },
+    {
+      "user": {
+        "id": 22,
+        "credentials": "Woodward Kramer",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-01-21T20:39:38.654Z",
+      "content": "Adipisicing tempor ad non velit officia minim est mollit proident. Lorem duis fugiat magna velit ut excepteur nulla duis ut mollit."
+    },
+    {
+      "user": {
+        "id": 5,
+        "credentials": "Hutchinson Gibson",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-01-24T01:09:32.676Z",
+      "content": "Est ex anim esse et Lorem exercitation incididunt laboris labore irure laborum. Cupidatat aliqua et veniam ullamco amet ea mollit amet sunt tempor duis aliquip."
+    },
+    {
+      "user": {
+        "id": 37,
+        "credentials": "Michele Collier",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-01-08T04:28:20.332Z",
+      "content": "Cupidatat enim excepteur occaecat voluptate est laborum. Anim aliquip deserunt incididunt id consectetur culpa dolore consectetur ex."
+    },
+    {
+      "user": {
+        "id": 90,
+        "credentials": "Gomez English",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-01-31T09:46:36.376Z",
+      "content": "Duis et pariatur eiusmod ea. Commodo consequat irure in consequat quis ipsum occaecat velit excepteur cupidatat aute nostrud."
+    },
+    {
+      "user": {
+        "id": 20,
+        "credentials": "Parks Newton",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-02-10T19:40:35.052Z",
+      "content": "Tempor anim pariatur cillum non id quis. Officia dolore anim aute cupidatat et."
+    },
+    {
+      "user": {
+        "id": 4,
+        "credentials": "Lolita Holcomb",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-02-22T03:09:49.253Z",
+      "content": "Est ea ut officia occaecat. Consequat pariatur magna ex cupidatat fugiat esse eu."
+    },
+    {
+      "user": {
+        "id": 100,
+        "credentials": "Corinne Bond",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-03-06T09:34:55.669Z",
+      "content": "Elit id quis eiusmod culpa est aliqua cillum sunt reprehenderit tempor. Do aliqua incididunt in laboris magna quis sunt."
+    },
+    {
+      "user": {
+        "id": 17,
+        "credentials": "Ross Nielsen",
+        "avatarPath": "public/avatars/nXdgq0Kv.png"
+      },
+      "createdAt": "2018-01-08T20:03:44.490Z",
+      "content": "Pariatur nulla mollit proident ullamco id consequat. Elit laborum fugiat aliqua fugiat proident amet ullamco Lorem."
+    }
+  ]
+}
