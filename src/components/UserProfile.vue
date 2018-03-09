@@ -295,6 +295,8 @@ export default {
 }
 
 .up-share-close {
+    padding: .5em;
+    margin-right: -.5em;
 	text-decoration: none;
 	color: $secondary-color;
 }
