@@ -16,7 +16,7 @@ npm run hot
 ```
 npm run build
 ```
-###### notes
+#### notes
 * Comments list's inner scrollbars could be styled with custom library to match the graphical design on every browser. Those libraries are not lightweight, so it would make sense if they were used throughout the website, not only in one component.
 
 * Infinity loading could be implemented for comments list.
