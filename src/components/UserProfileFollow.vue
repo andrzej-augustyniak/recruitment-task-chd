@@ -73,7 +73,7 @@ export default {
 	justify-content: center;
 	flex-basis: 100%;
 
-	margin: 0;
+	margin-top: 1.25em;
 	padding: 1.15em 1.75em;
 
 	border: none;
