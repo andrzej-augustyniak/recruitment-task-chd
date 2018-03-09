@@ -1,11 +1,11 @@
 <template>
-	<div class="up-container">
-		<div class="up-header">
+	<div class="user-profile">
+		<div class="up-header" v-if="user">
 			<div class="up-info">
-				<div class="up-user-avatar is-rounded"><img :src="user.avatarPath" alt=""></div>
+				<div class="up-user-avatar"><img :src="user.avatarPath" alt=""></div>
 				<h1 class="up-user-credentials">
 					{{ user.credentials }}
-					<user-profile-like :active="isLiked" :count="user.likesCount" />
+					<user-profile-like :id="user.id" :isLiked="isLiked" :likesCount="user.likesCount" @update="updateLikes" />
 				</h1>
 				<p class="up-user-address">
 					{{ user.address.city }}, {{ user.address.country }}
@@ -26,10 +26,10 @@
 					<p class="up-stat-value">{{ user.followersCount }}</p>
 					<p class="up-stat-label">Followers</p>
 				</div>
-				<user-profile-follow :active="isFollowed" :count="user.followersCount" />
+				<user-profile-follow :id="user.id" :isFollowed="isFollowed" :followersCount="user.followersCount" @update="updateFollowers" />
 			</div>
 			<a href="#" class="up-permalink" @click.prevent="showModal = !showModal">
-				<svg aria-hidden="true" data-prefix="fas" data-icon="share-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-share-square fa-w-18"><path fill="currentColor" d="M568.482 177.448L424.479 313.433C409.3 327.768 384 317.14 384 295.985v-71.963c-144.575.97-205.566 35.113-164.775 171.353 4.483 14.973-12.846 26.567-25.006 17.33C155.252 383.105 120 326.488 120 269.339c0-143.937 117.599-172.5 264-173.312V24.012c0-21.174 25.317-31.768 40.479-17.448l144.003 135.988c10.02 9.463 10.028 25.425 0 34.896zM384 379.128V448H64V128h50.916a11.99 11.99 0 0 0 8.648-3.693c14.953-15.568 32.237-27.89 51.014-37.676C185.708 80.83 181.584 64 169.033 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48v-88.806c0-8.288-8.197-14.066-16.011-11.302a71.83 71.83 0 0 1-34.189 3.377c-7.27-1.046-13.8 4.514-13.8 11.859z" class=""></path></svg>
+				<svg aria-hidden="true" data-prefix="fas" data-icon="share-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="fa-icon fa-share-square"><path fill="currentColor" d="M568.482 177.448L424.479 313.433C409.3 327.768 384 317.14 384 295.985v-71.963c-144.575.97-205.566 35.113-164.775 171.353 4.483 14.973-12.846 26.567-25.006 17.33C155.252 383.105 120 326.488 120 269.339c0-143.937 117.599-172.5 264-173.312V24.012c0-21.174 25.317-31.768 40.479-17.448l144.003 135.988c10.02 9.463 10.028 25.425 0 34.896zM384 379.128V448H64V128h50.916a11.99 11.99 0 0 0 8.648-3.693c14.953-15.568 32.237-27.89 51.014-37.676C185.708 80.83 181.584 64 169.033 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48v-88.806c0-8.288-8.197-14.066-16.011-11.302a71.83 71.83 0 0 1-34.189 3.377c-7.27-1.046-13.8 4.514-13.8 11.859z" class=""></path></svg>
 			</a>
 			<transition name="slide">
 				<div class="up-share" v-if="showModal">
@@ -38,7 +38,7 @@
 				</div>
 			</transition>
 		</div>
-		<user-profile-comments :comments="comments" />
+		<user-profile-comments :commentsData="profileData.comments" />
 	</div>
 </template>
 
@@ -48,12 +48,13 @@ import UserProfileLike from './UserProfileLike.vue';
 import UserProfileComments from './UserProfileComments.vue';
 
 export default {
+	props: [ 'profileData' ],
+
 	data() {
 		return {
-			user: { address: {} },
-			comments: [],
-			isLiked: false,
-			isFollowed: false,
+			user: this.profileData.user,
+			isLiked: this.profileData.isLikes,
+			isFollowed: this.profileData.isFollowed,
 			showModal: false
 		};
 	},
@@ -68,40 +69,47 @@ export default {
 		}
 	},
 
-	created() {
-		this.fetchMockupData();
+	watch: {
+		profileData: function() {
+			this.user = this.profileData.user;
+			this.isLiked = this.profileData.isLikes;
+			this.isFollowed = this.profileData.isFollowed;
+		}
 	},
 
 	methods: {
-		fetchMockupData () {
-			axios.get('public/mockup-data.json')
-			.then((response) => {
-				this.user = response.data.user;
-				this.comments = response.data.comments;
-				this.isLiked = response.data.isLiked;
-				this.isFollowed = response.data.isFollowed;
-			});
+		updateLikes(data) {
+			this.isLiked = data.active;
+			this.user.likesCount = data.count;
+		},
+
+		updateFollowers(data) {
+			this.isFollowed = data.active;
+			this.user.followersCount = data.count;
 		}
 	}
 }
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&subset=latin-ext');
-@import '~normalize.css/normalize.css';
+/**
+ * Let's import Montserrat font for use in our component.
+ * This should be removed if the font is available globally
+ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600&subset=latin-ext');
 
 @import '../assets/scss/_variables.scss';
-@import '../assets/scss/_common.scss';
 
-.up-container {
+.user-profile {
 	position: relative;
 	max-width: 31.25em;
 	min-width: 20em;
 	padding: 2em 1em 0 1em;
+	box-sizing: border-box;
 
 	font-family: $font-family;
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: 500;
 	color: $text-color;
 
 	&::before {
@@ -117,6 +125,12 @@ export default {
 		background-repeat: no-repeat;
 		box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
 		border-radius: 0.3125em;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
 	}
 }
 
@@ -151,12 +165,12 @@ export default {
 		transform: translateX(-50%);
 
 		display: block;
-
 		width: 4.375em;
 		height: 4.375em;
-		background-color: $palette-lightgray;
-
 		overflow: hidden;
+
+		border-radius: 10000px;
+		background-color: $palette-lightgray;
 
 		img {
 			width: 100%;
@@ -179,7 +193,7 @@ export default {
 		align-self: center;
 
 		font-size: 1.125em;
-		font-weight: 400;
+		font-weight: 500;
 		color: $primary-color;
 		line-height: 1.25em;
 
@@ -299,4 +313,28 @@ export default {
 	opacity: 1;
 	transform: translateY(0%);
 }
+
+// FONTAWESOME SVG STYLING
+.fa-icon {
+	display: inline-block;
+	width: 1.125em;
+	font-size: inherit;
+	height: 1em;
+	overflow: visible;
+	vertical-align: -.125em;
+	overflow: hidden;
+}
+
+// POSITIONING OF SUB COMPONENTS
+.user-profile .up-button-like {
+	position: absolute;
+	top: 50%;
+	right: 0;
+
+	transform: translateY(-50%);
+
+	margin: 0;
+	padding: .5em;
+}
+
 </style>
